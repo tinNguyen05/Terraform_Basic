@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
+      version = "~> 6.0"
     }
   }
 
@@ -10,15 +10,14 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region  = "ap-southeast-2"
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
-  instance_type = "t2.micro"
+  ami           = "ami-0b8d527345fdace59"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "Terraform_Demo"
   }
 }
-
